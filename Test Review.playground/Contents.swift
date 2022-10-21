@@ -8,9 +8,13 @@
     BMI = (Weight / (Height * Height)) * 703
  * Test your function by calling it and printing the result.
  */
+func findBMI(Weight: Double, Height: Int) -> Double
+{
+    var BMI = (Weight / Double(Height * Height)) * 703
+    return BMI
+}
 
-
-
+print(findBMI(Weight: 200, Height: 55))
 
 /*:
  * Create a variable named friendsList of type [String] and assign it to an empty array.
@@ -19,8 +23,14 @@
     * Call the addFriend(named:) method three times to add the following friends: “Alice”, “Bob”, and “Cindy”.
     * Print the contents of the friendsList variable.
  */
-
-
+var friendsList: [String] = []
+func addFriend(named friendName: String)
+{
+    friendsList.append(friendName)
+}
+addFriend(named: "Kayla")
+addFriend(named: "Martha")
+addFriend(named: "Frank")
 /*:
  * Define a function, museumEntry(), that:
     * accepts a parameter named, numAdults of type, Int, prepended by an _
@@ -32,7 +42,14 @@
             * (studentTicket * numStudents) + (adultTicket * numAdults)
             * Store this expression in a constant, total and return total as the last line of the function.
  */
-
+func museumEntry(_ numAdults: Int, _ numStudents: Int) -> Int
+{
+    let studentTicket = 14
+    let adultTicket = 25
+    let totalPrice = (studentTicket * numStudents) + (adultTicket * numAdults)
+    return totalPrice
+}
+print(museumEntry(4, 5))
 
 /*:
   2. ### Structures Review
@@ -49,6 +66,11 @@ struct Book {
      
      */
     // Write your init method below 💪
+    init(pages:Int,title:String)
+    {
+        self.pages = pages
+        self.title = title
+    }
     
 
 }
@@ -58,7 +80,9 @@ struct Book {
 * Create an instance of a Book named theHobbit with the values title: "The Hobbit" and pages: 300.
  */
 // Write your code below 💪
-
+var theHobbit = Book(pages: 300, title: "The Hobbit")
+var favBook = theHobbit
+theHobbit.pages = 1000
 
 
 
@@ -77,7 +101,11 @@ var lemonadeStand = [
 var total: Double = 0.0
 // Write your code below 💪
 
-
+for (_, monthlyProfit) in lemonadeStand
+{
+    total += monthlyProfit
+}
+print(total)
 
 
 /*:
@@ -87,7 +115,7 @@ var total: Double = 0.0
     * Iterate through the dictionary to see all the characters and the actors who played them.
  */
 // Write your code below 💪
-
+var bleach: [String: String] = ["Ichigo"]
 
 
 /*:
